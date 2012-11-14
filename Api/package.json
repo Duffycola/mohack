@@ -1,0 +1,11 @@
+{
+  "name": "meetmeapi",
+  "description": "MeetMe API",
+  "author": "Martin Matysiak <kaktus621@gmail.com>",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "3.0.0rc4",
+    "mysql": "git://github.com/felixge/node-mysql.git"
+  }
+}
