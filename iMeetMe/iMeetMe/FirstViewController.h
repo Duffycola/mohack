@@ -12,7 +12,7 @@
 
 
 
-@interface FirstViewController : UIViewController<CLLocationManagerDelegate>
+@interface FirstViewController : UIViewController<CLLocationManagerDelegate, UITextFieldDelegate>
 {
     IBOutlet UITextField* statusMsg;
     IBOutlet UILabel* statusLabel;

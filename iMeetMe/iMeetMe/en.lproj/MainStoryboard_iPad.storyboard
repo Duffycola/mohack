@@ -30,10 +30,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hey, I am happy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MO5-Hf-DzL">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="299" id="Bh4-4G-gj0"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="I am alone in room 5056, where are you guys?" borderStyle="roundedRect" placeholder="Hey, I am happy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MO5-Hf-DzL">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -58,7 +55,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGV-pE-7AP">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QGV-pE-7AP">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="Wmc-qn-AGk"/>
                                     <constraint firstAttribute="height" constant="35" id="bEh-mb-Tf1"/>

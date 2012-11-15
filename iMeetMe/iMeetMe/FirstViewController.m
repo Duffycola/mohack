@@ -46,6 +46,8 @@
 //    [mapView setCenterCoordinate:mapView.userLocation];
     
     update_timer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(actionMapUpdate:) userInfo:nil repeats:YES];
+    
+    statusMsg.delegate = self;
 }
 
 
@@ -62,7 +64,6 @@
 {
     // create correct url
     statusLabel.text = @"Sending status...";
-    
     
     // GET /position?latitude=...&longitude=...&status=...&id=...]
     NSDictionary* variables = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -207,5 +208,13 @@
 }
 
 
+#pragma mark - Protocol UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+{
+    [textField resignFirstResponder];
+    [self actionStatusSave:textField];
+    return YES;
+}
 
 @end
