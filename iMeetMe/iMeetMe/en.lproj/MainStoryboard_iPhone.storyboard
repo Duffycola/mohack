@@ -28,9 +28,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hey, I am happy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="014-eB-6uD">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="299" id="ShE-jH-SEg"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -40,7 +37,7 @@
                                     <constraint firstAttribute="height" constant="218" id="gvt-No-RYg"/>
                                 </constraints>
                             </mapView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Debug Status]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1m-jo-A6E">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Debug Status]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1m-jo-A6E">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="2gp-7C-GDC"/>
                                 </constraints>
@@ -48,9 +45,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Debug Map]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ1-LJ-luH">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="[Debug Map]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ1-LJ-luH">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="fFm-Ze-JGW"/>
+                                    <constraint firstAttribute="width" constant="280" id="NLR-NE-Lh2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -73,9 +70,9 @@
                                     <action selector="actionStatusSave:" destination="2" eventType="touchUpInside" id="9CJ-Yx-ENd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-YC-Hg6">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-YC-Hg6">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="wqH-KX-hFt"/>
+                                    <constraint firstAttribute="height" constant="24" id="l5a-AS-HmL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Update">
@@ -102,19 +99,39 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9e-WP-rcI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="EwN-Gp-Mr4"/>
+                                    <constraint firstAttribute="height" constant="42" id="SUt-vl-nUB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="satellite">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeMapType:" destination="2" eventType="touchUpInside" id="4z4-q1-SS2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wXw-05-hVT" firstAttribute="leading" secondItem="NJ1-LJ-luH" secondAttribute="leading" type="default" id="1PL-LT-HFr"/>
                             <constraint firstItem="BmW-gd-BcM" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8PE-LW-Msg"/>
                             <constraint firstItem="s1m-jo-A6E" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Apu-rv-477"/>
+                            <constraint firstItem="Chm-YC-Hg6" firstAttribute="leading" secondItem="g9e-WP-rcI" secondAttribute="leading" type="default" id="VdY-c0-xJe"/>
+                            <constraint firstAttribute="bottom" secondItem="g9e-WP-rcI" secondAttribute="bottom" constant="205" id="Wbu-XT-YHd"/>
                             <constraint firstItem="s1m-jo-A6E" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="11" id="X9F-dF-m7Q"/>
                             <constraint firstItem="reU-HB-V8C" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="26" id="YUT-fn-QAl"/>
                             <constraint firstItem="BRR-er-gjZ" firstAttribute="trailing" secondItem="NJ1-LJ-luH" secondAttribute="trailing" type="default" id="ZB6-vL-2iK"/>
-                            <constraint firstItem="014-eB-6uD" firstAttribute="trailing" secondItem="Chm-YC-Hg6" secondAttribute="trailing" type="default" id="Ze2-Ls-edh"/>
                             <constraint firstItem="BmW-gd-BcM" firstAttribute="top" secondItem="BRR-er-gjZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="aPa-Ip-2U9"/>
                             <constraint firstItem="014-eB-6uD" firstAttribute="top" secondItem="16" secondAttribute="top" constant="72" id="dVf-lK-fSG"/>
+                            <constraint firstItem="Chm-YC-Hg6" firstAttribute="trailing" secondItem="014-eB-6uD" secondAttribute="trailing" type="default" id="fx2-er-G5q"/>
                             <constraint firstItem="BRR-er-gjZ" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gdv-Rs-cnK"/>
+                            <constraint firstAttribute="trailing" secondItem="g9e-WP-rcI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hMi-Xz-gre"/>
                             <constraint firstItem="wXw-05-hVT" firstAttribute="top" secondItem="16" secondAttribute="top" constant="183" id="hcy-wV-gAi"/>
                             <constraint firstItem="wXw-05-hVT" firstAttribute="leading" secondItem="014-eB-6uD" secondAttribute="leading" type="default" id="kML-4O-2QL"/>
                             <constraint firstAttribute="bottom" secondItem="Chm-YC-Hg6" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="lVy-Ga-E2N"/>
@@ -135,6 +152,7 @@
                         <outlet property="longitudeLabel" destination="BRR-er-gjZ" id="aHI-0R-8Zk"/>
                         <outlet property="mapLabel" destination="NJ1-LJ-luH" id="y1h-sC-4Zr"/>
                         <outlet property="mapView" destination="reU-HB-V8C" id="DwS-3M-Olg"/>
+                        <outlet property="satelliteButton" destination="g9e-WP-rcI" id="bGT-1o-Yzl"/>
                         <outlet property="statusLabel" destination="s1m-jo-A6E" id="7zL-Xb-c2t"/>
                         <outlet property="statusMsg" destination="014-eB-6uD" id="0DL-dH-U3d"/>
                     </connections>
@@ -211,12 +229,14 @@
             <relationships>
                 <relationship kind="action" name="actionMapUpdate:"/>
                 <relationship kind="action" name="actionStatusSave:"/>
+                <relationship kind="action" name="changeMapType:"/>
                 <relationship kind="outlet" name="buttonMapUpdate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonStatusSave" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="satelliteButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="statusMsg" candidateClass="UITextField"/>
             </relationships>

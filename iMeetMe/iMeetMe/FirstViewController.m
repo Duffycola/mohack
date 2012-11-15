@@ -38,9 +38,14 @@
     mapView.zoomEnabled = YES;
     mapView.scrollEnabled = YES;
     mapView.showsUserLocation = YES;
+    [mapView setCenterCoordinate:mapView.userLocation.location.coordinate];
+    [mapView setRegion:MKCoordinateRegionMakeWithDistance(mapView.userLocation.location.coordinate, 50, 50)];
     
+    annotations = [[NSMutableArray alloc] init];
     
-    [mapView setCenterCoordinate:currentCoordinate];
+//    [mapView setCenterCoordinate:mapView.userLocation];
+    
+    update_timer = [NSTimer timerWithTimeInterval:5.0 target:self selector:@selector(actionMapUpdate:) userInfo:nil repeats:YES];
 }
 
 
@@ -111,6 +116,9 @@
         return;
     }
     
+    [mapView removeAnnotations:annotations];
+    [annotations removeAllObjects];
+    
     NSArray* users = [map_data objectForKey:@"users"];
     NSEnumerator* e = [users objectEnumerator];
     NSDictionary* user;
@@ -130,9 +138,10 @@
         annotation.title = user_name;
         annotation.subtitle = user_status;
         annotation.coordinate = CLLocationCoordinate2DMake([user_latitude floatValue], [user_longitude floatValue]);
-        [mapView addAnnotation:annotation];
+        
+        [annotations addObject:annotation];
     }
-    
+    [mapView addAnnotations:annotations];
 }
 
 
@@ -172,6 +181,29 @@
 //    [mapView setCenterCoordinate:currentCoordinate];
 //    [mapView setRegion:region];
     
+    
+}
+
+
+- (IBAction)changeMapType:(id)sender
+{
+    MKMapType newMapType;
+    NSString* title;
+    
+    if (mapView.mapType == MKMapTypeStandard) {
+        newMapType = MKMapTypeSatellite;
+        title = @"Hybrid";
+    } else if (mapView.mapType == MKMapTypeSatellite) {
+        newMapType = MKMapTypeHybrid;
+        title = @"Standard";
+    } else {
+        newMapType = MKMapTypeStandard;
+        title = @"Satellite";
+    }
+    
+    mapView.mapType = newMapType;
+    
+    [(UIButton*)sender setTitle:title forState:UIControlStateNormal];
 }
 
 

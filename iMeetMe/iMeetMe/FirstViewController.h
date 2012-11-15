@@ -23,6 +23,7 @@
     
     IBOutlet UILabel* longitudeLabel;
     IBOutlet UILabel* latitudeLabel;
+    IBOutlet UIButton* satelliteButton;
     
     NSString* currentID;
     
@@ -32,13 +33,17 @@
     //float currentLatitude;
     
     CLLocationManager *locationManager;
+    
+    NSMutableArray* annotations;
+    
+    NSTimer* update_timer;
 }
 
 
 
 -(IBAction)actionStatusSave:(id)sender;
 -(IBAction)actionMapUpdate:(id)sender;
-
+-(IBAction)changeMapType:(id)sender;
 
 - (void)initLocationManager;
 
